@@ -7,12 +7,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -400,11 +394,11 @@ textarea.input {
 
 #top-header {
   /**/
-  padding-bottom: 5px;
-  padding-top: 5px;
+  width: 100%;
+  padding-bottom: 10px;
+  padding-top: 10px;
   background-color: #1e1f29;
-  height: 35px;
-  top: 0;
+  text-align: center;
 }
 
 .header-links li {
@@ -433,6 +427,10 @@ textarea.input {
 	HEADER
 \*----------------------------*/
 
+#header {
+  background: #15161d;
+  border-top: 3px solid #d10024;
+}
 /*----------------------------*\
 	Logo
 \*----------------------------*/
@@ -448,10 +446,11 @@ textarea.input {
 \*----------------------------*/
 
 .header-search form {
-  margin: 60px 0;
+  margin: 60px 0 0 20px;
 }
 
 .header-search form .input {
+  border-radius: 40px 0 0 40px;
   width: calc(100% - 100px);
 }
 
@@ -499,32 +498,27 @@ textarea.input {
 ===========================================================*/
 
 #navigation {
-  /* background: #fff; */
-  background: #15161d;
-  /* color: white; */
+  background: #fff;
   border-bottom: 2px solid #e4e7ed;
   border-top: 3px solid #d10024;
 }
-
-/*----------------------------*\
-	Main nav
-\*----------------------------*/
+.burger {
+  display: none;
+}
 
 .main-nav {
-  display: block;
+  display: flex;
+  padding: 15px;
+  color: black;
 }
 .main-nav > li + li {
   margin-left: 30px;
-  display: inline;
 }
 .main-nav > .active {
   margin-left: 30px;
-  display: inline;
 }
 .main-nav > li > a {
-  display: inline-block;
   padding: 20px 0px;
-  color: white;
 }
 
 .main-nav li a:hover,
@@ -533,78 +527,15 @@ textarea.input {
   color: #d10024;
 }
 
-.main-nav > li > a:after {
-  content: "";
-  display: block;
-  width: 0%;
-  height: 2px;
-  background-color: #d10024;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-}
-
-.main-nav > li > a:hover:after,
-.main-nav > li > a:focus:after,
-.main-nav > li.active > a:after {
-  width: 100%;
-}
-
 .header-ctn li.nav-toggle {
   display: none;
-}
-
-/*----------------------------*\
-	responsive nav
-\*----------------------------*/
-
-@media only screen and (max-width: 991px) {
-  .header-ctn .menu-toggle {
-    display: inline-block;
-  }
-  #responsive-nav {
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: #15161d;
-    height: 100vh;
-    max-width: 250px;
-    width: 0%;
-    overflow: hidden;
-    z-index: 22;
-    padding-top: 60px;
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%);
-    -webkit-transition: 0.2s all;
-    transition: 0.2s all;
-  }
-  #responsive-nav.active {
-    -webkit-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    transform: translateX(0%);
-    width: 100%;
-  }
-  .main-nav {
-    margin: 0px;
-    float: none;
-  }
-  .main-nav > li {
-    display: block;
-    float: none;
-  }
-  .main-nav > li + li {
-    margin-left: 0px;
-  }
-  .main-nav > li > a {
-    padding: 15px;
-    color: #fff;
-  }
 }
 
 /*=========================================================
 	04 -> CATEGORY SHOP
 ===========================================================*/
 .shop-section {
+  border-top: 3px solid #d10024;
   background: rgb(230, 224, 224);
 }
 .shop {
@@ -1901,13 +1832,7 @@ textarea.input {
 	13 -> RESPONSIVE
 ===========================================================*/
 
-@media only screen and (max-width: 1201px) {
-}
-
 @media only screen and (max-width: 991px) {
-  #top-header .header-links.pull-left {
-    float: none !important;
-  }
   #top-header .header-links.pull-right {
     float: none !important;
     margin-top: 5px;
@@ -1933,12 +1858,29 @@ textarea.input {
 }
 
 @media only screen and (max-width: 767px) {
-  .section-title .section-nav {
-    float: none;
-    margin-top: 10px;
+  body {
+    overflow-x: hidden;
   }
-  .section-tab-nav li {
-    margin-top: 10px;
+  .header-ctn {
+    display: none;
+  }
+  .header-search {
+    display: none;
+  }
+  #header {
+    /* display: inline; */
+    position: relative;
+  }
+
+  .header-logo {
+    width: 30%;
+  }
+  .header-logo img {
+    width: 100px;
+  }
+  .main-nav {
+    flex-direction: column;
+    text-align: center;
   }
 }
 

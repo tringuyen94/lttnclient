@@ -36,7 +36,13 @@ a:focus {
   text-decoration: none;
   outline: none;
 }
-
+button:hover,
+button:focus {
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
 ul,
 ol {
   margin: 0;
@@ -46,4 +52,10 @@ ol {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

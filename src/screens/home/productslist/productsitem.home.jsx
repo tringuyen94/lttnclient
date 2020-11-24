@@ -10,7 +10,7 @@ const ProductsItem = ({
   history,
 }) => {
   useEffect(() => {
-    dispatch(fetchProductsByCategory(categoryId,1))
+    dispatch(fetchProductsByCategory(categoryId, 1))
   }, [categoryId])
   const renderProducts = () => {
     return (

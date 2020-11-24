@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { domain } from "../../services/baseURL.services"
 import { connect } from "react-redux"
 import { fetchProductsByCategory } from "../../redux/actions/product.actions"
@@ -31,7 +31,12 @@ const RelatedProductDetail = ({ dispatch, categoryId, productsByCategory }) => {
                 <div className="view-detail">
                   <button
                     className="view-detail-btn"
-                    onClick={() => history.replace(`/detail/${product._id}`)}
+                    onClick={() => {
+                      history.replace(`/detail/${product._id}`)
+                      window.scrollTo({
+                        top: 0,
+                      })
+                    }}
                   >
                     Chi tiết
                   </button>

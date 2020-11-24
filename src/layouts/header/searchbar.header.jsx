@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { withRouter } from "react-router-dom"
 import { connect } from "react-redux"
-import { getProductsBySearching } from "../../../redux/actions/product.actions"
+import { getProductsBySearching } from "../../redux/actions/product.actions"
 
 const SearchBar = ({ dispatch, history }) => {
   const [productFilter, setProductFilter] = useState()
@@ -16,12 +16,12 @@ const SearchBar = ({ dispatch, history }) => {
     })
   }
   return (
-    <div className="col-md-5">
+    <div className="col-md-6">
       <div className="header-search">
         <form className="form-group">
           <input
             className="input"
-            placeholder="Nhập tên sản phẩm"
+            placeholder="Nhập tên sản phẩm...."
             onChange={handleChange}
             name="name"
           />

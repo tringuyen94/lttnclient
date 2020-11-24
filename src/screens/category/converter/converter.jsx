@@ -3,11 +3,12 @@ import { connect } from "react-redux"
 import { fetchProductsByCategory } from "../../../redux/actions/product.actions"
 import ProductsConverter from "./products.converter"
 import AsideConverter from "./aside.converter"
+import Loader from "react-loader-spinner"
 import ProductsServices from "../../../services/products.services"
-
-const Converter = ({ productsByCategory, dispatch, history }) => {
+const Converter = ({ productsByCategory, dispatch, history, loader }) => {
   const [pageCurrent, setPageCurrent] = useState(1)
   const [conFilter, setConfilter] = useState()
+  const [tloader, setLoader] = useState(loader)
 
   useEffect(() => {
     dispatch(fetchProductsByCategory("5e67d1d3616a8d11cc4eacab", 1))
@@ -21,6 +22,7 @@ const Converter = ({ productsByCategory, dispatch, history }) => {
         history.push("/notfound")
       })
   }
+
   return (
     productsByCategory && (
       <Fragment>
@@ -90,6 +92,7 @@ const Converter = ({ productsByCategory, dispatch, history }) => {
 const mapStateToProps = (state) => {
   return {
     productsByCategory: state.product.productsByCategory,
+    loader: state.product.loader,
   }
 }
 export default connect(mapStateToProps)(Converter)

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import "./App.css"
 import Header from "./layouts/header/Header"
 import HomeScreen from "./screens/home/home"
@@ -15,12 +15,25 @@ import ResultsSearching from "./screens/resultssearching"
 
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import ChatComponent from "./components/chat/chat"
+import ScrollToTop from "./components/scroll-to-top/scrolltotop"
 
 function App({ dispatch }) {
+  const [isScrollTop, setIsScrollTop] = useState(false)
   useEffect(() => {
     dispatch(fetchCategories())
     dispatch(fetchProducts())
+    document.addEventListener("scroll", function (e) {
+      toggleScrollTop()
+    })
   }, [])
+  const toggleScrollTop = () => {
+    if (window.pageYOffset > 300) {
+      setIsScrollTop(true)
+    } else if (window.pageXOffset == 0) {
+      setIsScrollTop(false)
+    } else setIsScrollTop(false)
+  }
   return (
     <>
       <ToastContainer positcion="top-right" autoClose={3000} closeOnClick />
@@ -37,6 +50,8 @@ function App({ dispatch }) {
         <Route path="/home" exact component={HomeScreen} />
         <Route path="/" component={HomeScreen} />
       </Switch>
+      {isScrollTop && <ScrollToTop />}
+      <ChatComponent />
       <Footer />
     </>
   )

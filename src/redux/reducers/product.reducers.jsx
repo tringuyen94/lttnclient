@@ -12,6 +12,7 @@ let initialState = {
   productById: null,
   pagination: null,
   filter: null,
+  loader: true,
 }
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -23,7 +24,11 @@ const productReducer = (state = initialState, action) => {
       return { ...state }
     case FETCH_PRODUCTS_BY_CATEGORY:
       state.productsByCategory = action.payload
-      return { ...state }
+      return {
+        ...state,
+        loader: setTimeout(() => true, 3000),
+      }
+
     case GET_PRODUCTS_BY_SEARCHING:
       state.filter = action.payload
       return { ...state }
