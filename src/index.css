@@ -4,14 +4,10 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: #333;
+  overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   color: #2b2d42;
   font-weight: 700;
   margin: 0 0 10px;
@@ -23,6 +19,7 @@ h6 {
   margin: 0px;
   padding: 0px;
 }
+
 a {
   color: #2b2d42;
   font-weight: 500;
@@ -30,32 +27,31 @@ a {
   transition: 0.2s color;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
   color: #d10024;
   text-decoration: none;
   outline: none;
 }
-button:hover,
-button:focus {
+
+button:hover, button:focus {
   outline: none;
 }
+
 input:focus {
   outline: none;
 }
-ul,
-ol {
+
+ul, ol {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }

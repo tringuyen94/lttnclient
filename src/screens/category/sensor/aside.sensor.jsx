@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
 import { fetchBrands } from "../../../redux/actions/brands.actions"
 
-const AsideHmi = ({ brands, dispatch, getConvertersFilter }) => {
+const AsideSensor = ({ brands, dispatch, getConvertersFilter }) => {
     const [conFilter, setConFilter] = useState()
     useEffect(() => {
         dispatch(fetchBrands())
@@ -13,7 +13,7 @@ const AsideHmi = ({ brands, dispatch, getConvertersFilter }) => {
             [e.target.name]: e.target.value,
         })
     }
-    const renderHmiBrands = () => {
+    const renderSensorBrands = () => {
         return (
             brands &&
             brands.map((brand, index) => {
@@ -38,7 +38,7 @@ const AsideHmi = ({ brands, dispatch, getConvertersFilter }) => {
     return (
         <div className="aside">
             <h4 className="aside-title">NHÃN HÀNG</h4>
-            <div className="checkbox-filter">{renderHmiBrands()}</div>
+            <div className="checkbox-filter">{renderSensorBrands()}</div>
             <button className="btn btn-info" onClick={handleClick}>
                 Tìm kiếm
       </button>
@@ -50,4 +50,4 @@ const mapStateToProps = (state) => {
         brands: state.brand.brands,
     }
 }
-export default connect(mapStateToProps)(AsideHmi)
+export default connect(mapStateToProps)(AsideSensor)

@@ -5,21 +5,24 @@ const Contact = () => {
     <div id="top-header">
       <ul className="header-links">
         <li>
-          <a href="#">
-            <i className="fa fa-phone" /> 0931.839.693 - A.Long
+          <a href="https://www.facebook.com/tranduythienhcm">
+            <i className="fa fa-facebook" /> Biến tần Nhật
           </a>
         </li>
         <li>
           <a href="#">
-            <i className="fa fa-envelope-o" /> lttnelectric@gmail.com
+            <img src="https://img.icons8.com/ios/50/000000/zalo.png" />
+
+          0931.839.693
           </a>
         </li>
         <li>
-          <a href="#">
-            <i className="fa fa-map-marker" /> 826 Tỉnh lộ 43, KP 3, P. Bình
-            Chiểu, Q. Thủ Đức, TP. Hồ Chí Minh
+          <a href="https://www.youtube.com/channel/UCuxbTul1NZwm9ypDXj8I3wQ">
+            <i className="fa fa-youtube" /> LTTN Electric Channel
           </a>
         </li>
+
+
       </ul>
     </div>
   )

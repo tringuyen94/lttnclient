@@ -12,7 +12,6 @@ let initialState = {
   productById: null,
   pagination: null,
   filter: null,
-  loader: true,
 }
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -26,7 +25,6 @@ const productReducer = (state = initialState, action) => {
       state.productsByCategory = action.payload
       return {
         ...state,
-        loader: setTimeout(() => true, 3000),
       }
 
     case GET_PRODUCTS_BY_SEARCHING:

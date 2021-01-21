@@ -1,11 +1,20 @@
-import React from "react"
-import MenuIcon from "@material-ui/icons/Menu"
+import React, { Fragment, useState } from "react"
 
 const Navigation = () => {
+
+  const [isVisbleNav, setisVisibleNav] = useState(true)
+  const activeNav = () => {
+    setisVisibleNav(!isVisbleNav)
+  }
   return (
     <nav id="navigation">
+      <div className='burger' onClick={activeNav}>
+        <div className="bar__1"></div>
+        <div className="bar__2"></div>
+        <div className="bar__3"></div>
+      </div>
       <div className="container">
-        <ul className="main-nav">
+        <ul className={isVisbleNav ? "main-nav" : 'main-nav-active'}>
           <li className="active">
             <a href="/home">Home</a>
           </li>
@@ -33,6 +42,7 @@ const Navigation = () => {
         </ul>
       </div>
     </nav>
+
   )
 }
 

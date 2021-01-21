@@ -13,7 +13,7 @@ const SlickProduct = ({ dispatch, products }) => {
       products &&
       products.map((prod) => {
         return (
-          <div className="col-md-3 p-4">
+          <div className="slick-item col-xs-6 p-4">
             <img
               src={domain + "/" + prod.image.path}
               width="70px"
@@ -33,8 +33,8 @@ const SlickProduct = ({ dispatch, products }) => {
     slidesToScroll: 3,
   }
   return (
-    <div className="section">
-      <div className="container">
+    <div id="slick-product">
+      <div className="container-fluid p-3">
         <h3 className="text-center">Tất cả sản phẩm</h3>
         <Slider {...setting}>{renderProducts()}</Slider>
       </div>

@@ -16,16 +16,14 @@ let socket = io(domain)
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 500,
-    maxWidth: 345,
-    position: "absolute",
-    right: "100px",
-    bottom: "50px",
+    width: 345,
+    right: 5,
+    bottom: 100,
     position: "fixed",
     zIndex: 20,
   },
   header: {
-    backgroundColor: "#3F51B5",
+    backgroundColor: "#d10024",
     color: "white",
   },
   scroll: {
@@ -79,45 +77,44 @@ const ChatBox = () => {
           setDisplayInput={setDisplayInput}
         />
       ) : (
-        <Fragment>
-          <CardContent>
-            <i style={{ textAlign: "center", fontSize: "13px" }}>
-              <Moment format="ddd DD-MM-YYYY ">{joinTime}</Moment>
-            </i>
+          <Fragment>
+            <CardContent>
+              <i style={{ textAlign: "center", fontSize: "13px" }}>
+                <Moment format="ddd DD-MM-YYYY ">{joinTime}</Moment>
+              </i>
 
-            <ScrollToBottom className={classes.scroll}>
-              {messages.map((message, i) => (
-                <div key={i}>
-                  <Message message={message} nickName={nickName} />
-                </div>
-              ))}
-            </ScrollToBottom>
-            <CardActions>
-              <TextField
-                fullWidth
-                variant="standard"
-                color="primary"
-                autoFocus
-                value={textChat}
-                label="Type your message here...."
-                onChange={(e) => setTextChat(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    sendMessage(e)
-                  }
-                }}
-              />
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={(e) => sendMessage(e)}
-              >
-                <SendIcon />
-              </Button>
-            </CardActions>
-          </CardContent>
-        </Fragment>
-      )}
+              <ScrollToBottom className={classes.scroll}>
+                {messages.map((message, i) => (
+                  <div key={i}>
+                    <Message message={message} nickName={nickName} />
+                  </div>
+                ))}
+              </ScrollToBottom>
+              <CardActions>
+                <TextField
+                  fullWidth
+                  variant="standard"
+                  color="primary"
+                  autoFocus
+                  value={textChat}
+                  label="Type your message here...."
+                  onChange={(e) => setTextChat(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      sendMessage(e)
+                    }
+                  }}
+                />
+                <Button
+                  variant="contained"
+                  onClick={(e) => sendMessage(e)}
+                >
+                  <SendIcon />
+                </Button>
+              </CardActions>
+            </CardContent>
+          </Fragment>
+        )}
     </Card>
   )
 }

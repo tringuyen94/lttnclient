@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -18,19 +14,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /*
 
 Template Name: Electro - HTML Ecommerce Template
@@ -38,7 +21,7 @@ Author: yaminncco
 
 Colors:
 	Body 		: #333
-	Headers 	: #2B2D42
+	Headers 	: #2B2D42 
 	Primary 	: #D10024
 	Dark 		: #15161D ##1E1F29
 	Grey 		: #E4E7ED #FBFBFC #8D99AE #B9BABC
@@ -324,12 +307,15 @@ textarea.input {
   color: white;
   font-weight: 700;
 }
+
 .section .title:hover {
   color: red;
 }
+
 .section .title:active {
   color: red;
 }
+
 .section .title:focus {
   outline: 0;
   color: red;
@@ -404,7 +390,7 @@ textarea.input {
 .header-links li {
   display: inline-block;
   margin-right: 15px;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .header-links li:last-child {
@@ -415,6 +401,12 @@ textarea.input {
   color: #fff;
 }
 
+.header-links li img {
+  background-color: #d10024;
+  width: 20px;
+  margin-right: 5px;
+}
+
 .header-links li a:hover {
   color: #d10024;
 }
@@ -423,20 +415,23 @@ textarea.input {
   color: #d10024;
   margin-right: 5px;
 }
+
 /*----------------------------*\
 	HEADER
 \*----------------------------*/
 
 #header {
-  background: #15161d;
   border-top: 3px solid #d10024;
 }
+
 /*----------------------------*\
 	Logo
 \*----------------------------*/
+
 .header-logo {
   margin: 20px 0;
 }
+
 .header-logo .logo img {
   box-shadow: 10px 5px 15px #636161;
 }
@@ -463,62 +458,41 @@ textarea.input {
   border: none;
   border-radius: 0px 40px 40px 0px;
 }
-/*----------------------------*\
-	Contact
-\*----------------------------*/
-.header-ctn {
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-.header-ctn a {
-  text-align: center;
-  font-size: 1rem;
-  padding: 1em;
-  color: rgb(209, 0, 36);
-  background-color: white;
-  display: block;
-}
-.contact {
-  text-decoration: none;
-  border: 1px solid #d10024;
-  position: relative;
-  overflow: hidden;
-}
-
-.contact:hover {
-  box-shadow: 1px 1px 25px 10px rgba(209, 0, 36, 0.4);
-
-  color: white;
-  background-color: rgba(209, 0, 36, 0.8);
-}
 
 /*=========================================================
 	03 -> Navigation
 ===========================================================*/
 
 #navigation {
-  background: #fff;
+  background: #1e1f29;
   border-bottom: 2px solid #e4e7ed;
   border-top: 3px solid #d10024;
 }
+
 .burger {
   display: none;
+  margin: 20px 30px;
+}
+
+.burger div {
+  width: 26px;
+  height: 3px;
+  background-color: #fff;
+  margin-top: 4px;
 }
 
 .main-nav {
   display: flex;
   padding: 15px;
-  color: black;
 }
+
 .main-nav > li + li {
-  margin-left: 30px;
+  margin-left: 50px;
 }
-.main-nav > .active {
-  margin-left: 30px;
-}
+
 .main-nav > li > a {
   padding: 20px 0px;
+  color: #fff;
 }
 
 .main-nav li a:hover,
@@ -534,10 +508,12 @@ textarea.input {
 /*=========================================================
 	04 -> CATEGORY SHOP
 ===========================================================*/
+
 .shop-section {
   border-top: 3px solid #d10024;
   background: rgb(230, 224, 224);
 }
+
 .shop {
   z-index: 20;
   position: relative;
@@ -575,7 +551,6 @@ textarea.input {
 
 .shop .shop-img {
   position: relative;
-  background-color: #e4e7ed;
   z-index: -1;
 }
 
@@ -609,66 +584,20 @@ textarea.input {
 }
 
 /*=========================================================
-	05 -> HOT DEAL
+	05 -> SLICK PRODUCT
 ===========================================================*/
 
-#hot-deal.section {
-  padding: 60px 0px;
-  margin: 30px 0px;
-  background-color: #e4e7ed;
-  /* background-image: url("../img/hotdeal.png"); */
-  background-position: center;
-  background-repeat: no-repeat;
+#slick-product {
+  border: 2px solid #d10024;
+  /* background: #1e1f29; */
+  color: #d10024;
 }
 
-.hot-deal {
-  text-align: center;
+#slick-product h3 {
+  color: #d10024;
 }
 
-.hot-deal .hot-deal-countdown {
-  margin-bottom: 30px;
-}
-
-.hot-deal .hot-deal-countdown > li {
-  position: relative;
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  background: #d10024e6;
-  text-align: center;
-  border-radius: 50%;
-  margin: 0px 5px;
-}
-
-.hot-deal .hot-deal-countdown > li > div {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.hot-deal .hot-deal-countdown > li > div h3 {
-  color: #fff;
-  margin-bottom: 0px;
-}
-
-.hot-deal .hot-deal-countdown > li > div span {
-  display: block;
-  font-size: 10px;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.hot-deal p {
-  text-transform: uppercase;
-  font-size: 24px;
-}
-
-.hot-deal .cta-btn {
-  margin-top: 15px;
+.slick-item img {
 }
 
 /*=========================================================
@@ -745,6 +674,7 @@ textarea.input {
 }
 
 .product .view-detail .view-detail-btn:hover {
+  cursor: pointer;
   background-color: #fff;
   color: #d10024;
   border-color: #d10024;
@@ -833,6 +763,7 @@ textarea.input {
 .aside + .aside {
   margin-top: 30px;
 }
+
 .aside-filter {
   border: 2px solid #ef233c;
   height: 40px;
@@ -846,6 +777,7 @@ textarea.input {
   border-radius: 10px;
   transition: 0.2s all;
 }
+
 .aside-filter:hover {
   background-color: #fff;
   color: #ef233c;
@@ -1007,6 +939,7 @@ textarea.input {
   width: 90%;
   text-align: center;
 }
+
 .store-pagination li button:hover {
   background-color: #e4e7ed;
   color: #d10024;
@@ -1232,6 +1165,7 @@ textarea.input {
   margin-right: 15px;
   margin-bottom: 0px;
 }
+
 .product-details .product-btns li {
   display: inline-block;
   text-transform: uppercase;
@@ -1255,11 +1189,13 @@ textarea.input {
 .product-details .product-links li + li {
   margin-left: 10px;
 }
+
 .product-contact-button ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .button {
   background: linear-gradient(to right, #d10024, darkred);
   color: white;
@@ -1321,6 +1257,7 @@ textarea.input {
   margin-bottom: 30px;
   border-bottom: 1px solid #aaa;
 }
+
 .react-tabs__tab-list:after {
   content: "";
   position: absolute;
@@ -1611,92 +1548,6 @@ textarea.input {
 }
 
 /*=========================================================
-	10 -> NEWSLETTER
-===========================================================*/
-
-#newsletter.section {
-  border-top: 2px solid #e4e7ed;
-  border-bottom: 3px solid #d10024;
-  margin-top: 30px;
-}
-
-.newsletter {
-  text-align: center;
-}
-
-.newsletter p {
-  font-size: 24px;
-}
-
-.newsletter form {
-  position: relative;
-  max-width: 520px;
-  margin: 30px auto;
-}
-
-.newsletter form:after {
-  content: "\f003";
-  font-family: FontAwesome;
-  position: absolute;
-  font-size: 160px;
-  color: #e4e7ed;
-  top: 15px;
-  -webkit-transform: translateY(-50%) rotate(15deg);
-  -ms-transform: translateY(-50%) rotate(15deg);
-  transform: translateY(-50%) rotate(15deg);
-  z-index: -1;
-  left: -90px;
-}
-
-.newsletter form .input {
-  width: calc(100% - 160px);
-  margin-right: -4px;
-  border-radius: 40px 0px 0px 40px;
-}
-
-.newsletter form .newsletter-btn {
-  width: 160px;
-  height: 40px;
-  font-weight: 700;
-  background: #d10024;
-  color: #fff;
-  border: none;
-  border-radius: 0px 40px 40px 0px;
-}
-
-.newsletter .newsletter-follow {
-  text-align: center;
-}
-
-.newsletter .newsletter-follow li {
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.newsletter .newsletter-follow li:last-child {
-  margin-right: 0px;
-}
-
-.newsletter .newsletter-follow li a {
-  position: relative;
-  display: block;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  border: 1px solid #e4e7ed;
-  background-color: #fff;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-}
-
-.newsletter .newsletter-follow li a:hover,
-.newsletter .newsletter-follow li a:focus {
-  background-color: #e4e7ed;
-  color: #d10024;
-}
-
-/*=========================================================
 	11 -> FOOTER
 ===========================================================*/
 
@@ -1837,6 +1688,9 @@ textarea.input {
     float: none !important;
     margin-top: 5px;
   }
+  .shop {
+    display: flexbox;
+  }
   .header-logo {
     float: none;
     text-align: center;
@@ -1871,7 +1725,6 @@ textarea.input {
     /* display: inline; */
     position: relative;
   }
-
   .header-logo {
     width: 30%;
   }
@@ -1895,5 +1748,50 @@ textarea.input {
   .store-pagination {
     float: none;
     margin-top: 10px;
+  }
+  .main-nav {
+    text-align: left;
+    position: absolute;
+    margin-top: 8px;
+    background-color: #15161d;
+    z-index: 100;
+    width: 50vw;
+    border-radius: 20px;
+    transform: translateX(-120%);
+    transition: all 0.5s ease-in;
+  }
+  .main-nav-active {
+    text-align: left;
+    position: absolute;
+    margin-top: 8px;
+    background-color: #15161d;
+    z-index: 100;
+    width: 50vw;
+    border-radius: 0px 20px 20px 0;
+    transition: all 0.5s ease-in;
+  }
+  .main-nav li {
+    opacity: 0;
+    padding: 10px 0;
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+  .main-nav-active > li {
+    opacity: 1;
+    padding: 10px 0;
+    margin-left: 50px;
+    transform: translateX(10px);
+    transition: all 1.5s ease-in;
+  }
+  .main-nav-active > li > a {
+    padding: 20px 0px;
+    color: #fff;
+  }
+  .main-nav-active li a:hover,
+  .main-nav li a:focus,
+  .main-nav li.active a {
+    color: #d10024;
   }
 }

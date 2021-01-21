@@ -12,10 +12,13 @@ import Converter from "./screens/category/converter/converter"
 import Plc from "./screens/category/plc/plc"
 import NotFound from "./screens/notfound"
 import ResultsSearching from "./screens/resultssearching"
+import Hmi from "./screens/category/hmi/hmi"
+import Accessories from "./screens/category/accessories/accessories"
 
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import ChatComponent from "./components/chat/chat"
+import HotlineComponent from "./components/hotline/hotline"
 import ScrollToTop from "./components/scroll-to-top/scrolltotop"
 
 function App({ dispatch }) {
@@ -40,10 +43,10 @@ function App({ dispatch }) {
       <Header />
       <Switch>
         <Route path="/categories/bien-tan" exact component={Converter} />
-        <Route path="/categories/hmi" exact component={Converter} />
+        <Route path="/categories/hmi" exact component={Hmi} />
         <Route path="/categories/plc" exact component={Plc} />
         <Route path="/result" exact component={ResultsSearching} />
-        <Route path="/categories/phu-kien" exact component={Converter} />
+        <Route path="/categories/phu-kien" exact component={Accessories} />
         <Route path="/categories/cam-bien" exact component={Converter} />
         <Route path="/detail/:productId" exact component={DetailScreen} />
         <Route path="/notfound" exact component={NotFound} />
@@ -51,6 +54,7 @@ function App({ dispatch }) {
         <Route path="/" component={HomeScreen} />
       </Switch>
       {isScrollTop && <ScrollToTop />}
+      <HotlineComponent />
       <ChatComponent />
       <Footer />
     </>

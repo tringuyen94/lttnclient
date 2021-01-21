@@ -3,12 +3,10 @@ import { connect } from "react-redux"
 import { fetchProductsByCategory } from "../../../redux/actions/product.actions"
 import ProductsConverter from "./products.converter"
 import AsideConverter from "./aside.converter"
-import Loader from "react-loader-spinner"
 import ProductsServices from "../../../services/products.services"
 const Converter = ({ productsByCategory, dispatch, history, loader }) => {
   const [pageCurrent, setPageCurrent] = useState(1)
   const [conFilter, setConfilter] = useState()
-  const [tloader, setLoader] = useState(loader)
 
   useEffect(() => {
     dispatch(fetchProductsByCategory("5e67d1d3616a8d11cc4eacab", 1))

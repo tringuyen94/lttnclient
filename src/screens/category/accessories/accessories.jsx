@@ -1,18 +1,18 @@
 import React, { Fragment, useEffect, useState } from "react"
 import { connect } from "react-redux"
 import { fetchProductsByCategory } from "../../../redux/actions/product.actions"
-import AsideHmi from "./aside.hmi.jsx"
-import ProductsHmi from "./products.hmi"
+import AsideAccessories from "./aside.accessories.jsx"
+import ProductsAccessories from "./products.accessories"
 import ProductsServices from "../../../services/products.services"
-const Hmi = ({ productsByCategory, dispatch, history }) => {
+const Accessories = ({ productsByCategory, dispatch, history }) => {
     const [pageCurrent, setPageCurrent] = useState(1)
     const [conFilter, setConfilter] = useState()
 
     useEffect(() => {
-        dispatch(fetchProductsByCategory("5e67d1e4616a8d11cc4eacad", 1))
+        dispatch(fetchProductsByCategory("5e738d87a335623d8868afa6", 1))
     }, [])
-    const getHmisFilter = (value) => {
-        ProductsServices.fetchHmisByFilter(value)
+    const getAccessoriessFilter = (value) => {
+        ProductsServices.fetchAccessoriessByFilter(value)
             .then((res) => {
                 setConfilter(res.data)
             })
@@ -27,7 +27,7 @@ const Hmi = ({ productsByCategory, dispatch, history }) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3">
-                            <AsideHmi getHmisFilter={getHmisFilter} />
+                            <AsideAccessories getAccessoriessFilter={getAccessoriessFilter} />
                         </div>
                         <div className="col-md-9">
                             <div className="store-filter clearfix">
@@ -74,7 +74,7 @@ const Hmi = ({ productsByCategory, dispatch, history }) => {
                                     )}
                             </div>
                             <div className="row">
-                                <ProductsHmi
+                                <ProductsAccessories
                                     page={pageCurrent}
                                     conFilter={conFilter}
                                     history={history}
@@ -92,4 +92,4 @@ const mapStateToProps = (state) => {
         productsByCategory: state.product.productsByCategory,
     }
 }
-export default connect(mapStateToProps)(Hmi)
+export default connect(mapStateToProps)(Accessories)

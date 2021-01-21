@@ -28,6 +28,8 @@ const DetailScreen = ({ match, dispatch, productById, productsByCategory }) => {
                     <img
                       src={domain + "/" + productById.image.path}
                       alt="#product"
+                      width="100px"
+                      height="300px"
                     />
                   </div>
                 </div>
@@ -39,11 +41,11 @@ const DetailScreen = ({ match, dispatch, productById, productsByCategory }) => {
                 <div className="product-details">
                   <h2 className="product-name">{productById.name}</h2>
                   <p className="product-keyword">
-                    Từ khóa :
+                    Từ khóa:{" "}
                     <a href="">
                       <small>{productById.category.nameCategory}</small>
                     </a>
-                    ,
+                    ,{" "}
                     <a href="">
                       <small>{productById.name}</small>
                     </a>
@@ -60,15 +62,14 @@ const DetailScreen = ({ match, dispatch, productById, productsByCategory }) => {
                   </ul>
                 </div>
                 <div className="product-contact">
-                  <p>
-                    <small>Liên hệ để báo giá</small>
-                  </p>
                   <div className="product-contact-button">
-                    <button className="button">0931.839.693 Mr.Long</button>
-
-                    <button className="button">Chat với chúng tôi</button>
+                    <button className="button">Biến tần chính hãng</button>
                   </div>
-                  <p>Thông tin liên hệ </p>
+                </div>
+                <div className="product-contact">
+                  <div className="product-contact-button">
+                    <button className="button">LTTNElectric</button>
+                  </div>
                 </div>
               </div>
               {/* /Product details */}
