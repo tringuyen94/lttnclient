@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
         padding: "10px 0",
         borderRadius: "20px",
         fontWeight: "bolder",
-        boxShadow: "5px 5px 10px 5px #eee",
+        boxShadow: "5px 5px 10px 5px #eee",     
         transitions: "all .5s ease",
     }
 }))
@@ -37,10 +37,14 @@ const HotlineComponent = () => {
             </Fab>
             {
                 displayHotline && <div className={classes.hotlineActive}>
+                    0938.068.545
+                     <br />
+                    (A Thiện - Kỹ thuật)
+                     <br />
                     0931.839.693
                      <br />
-                    (Hỗ trợ kỹ thuật)
-            </div>
+                    (A Long)
+                </div>
             }
 
 

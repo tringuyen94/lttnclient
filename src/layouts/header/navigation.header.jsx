@@ -37,6 +37,9 @@ const Navigation = () => {
             <a href="#">Sửa chữa</a>
           </li>
           <li>
+            <a href="#">Thi công</a>
+          </li>
+          <li>
             <a href="#">Liên hệ</a>
           </li>
         </ul>

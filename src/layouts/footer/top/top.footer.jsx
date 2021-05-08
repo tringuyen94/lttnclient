@@ -1,6 +1,12 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 const TopFooter = () => {
+  const [countVisitor, setCountVisitor] = useState('loading...')
+  useEffect(() => {
+    fetch('https://api.countapi.xyz/update/lttn/visitorcounter/?amount=1')
+      .then(res => res.json())
+      .then(res => { setCountVisitor(res.value) })
+  }, [])
   return (
     <div className="section">
       {/* container */}
@@ -61,38 +67,10 @@ const TopFooter = () => {
           <div className="clearfix visible-xs" />
           <div className="col-md-3 col-xs-6">
             <div className="footer">
-              <h3 className="footer-title">Thông tin liên lạc</h3>
+              <h3 className="footer-title">Lượt truy cập</h3>
               <ul className="footer-links">
                 <li>
-                  <a href="#">About Us</a>
-                </li>
-                <li>
-                  <a href="#">Contact Us</a>
-                </li>
-                <li>
-                  <a href="#">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="#">Orders and Returns</a>
-                </li>
-                <li>
-                  <a href="#">Terms &amp; Conditions</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-md-3 col-xs-6">
-            <div className="footer">
-              <h3 className="footer-title">Dịch vụ</h3>
-              <ul className="footer-links">
-                <li>
-                  <a href="#">Mua bán</a>
-                </li>
-                <li>
-                  <a href="#">Sửa chữa </a>
-                </li>
-                <li>
-                  <a href="#">Tư vấn</a>
+                  <a style={{ fontSize: "100px" }}>{countVisitor}</a><span>lượt</span>
                 </li>
               </ul>
             </div>

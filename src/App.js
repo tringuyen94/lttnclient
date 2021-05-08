@@ -14,10 +14,9 @@ import NotFound from "./screens/notfound"
 import ResultsSearching from "./screens/resultssearching"
 import Hmi from "./screens/category/hmi/hmi"
 import Accessories from "./screens/category/accessories/accessories"
-
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import ChatComponent from "./components/chat/chat"
+// import ChatComponent from "./components/chat/chat"
 import HotlineComponent from "./components/hotline/hotline"
 import ScrollToTop from "./components/scroll-to-top/scrolltotop"
 
@@ -55,7 +54,7 @@ function App({ dispatch }) {
       </Switch>
       {isScrollTop && <ScrollToTop />}
       <HotlineComponent />
-      <ChatComponent />
+      {/* <ChatComponent /> */}
       <Footer />
     </>
   )

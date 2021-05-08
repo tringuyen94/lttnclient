@@ -5,7 +5,6 @@ import {
   fetchProductsByCategory,
 } from "../../redux/actions/product.actions"
 import { domain } from "../../services/baseURL.services"
-import TabPaneDetail from "./tabpane.detail"
 import RelatedProductDetail from "./related.detail"
 const DetailScreen = ({ match, dispatch, productById, productsByCategory }) => {
   const { productId } = match.params
@@ -30,6 +29,7 @@ const DetailScreen = ({ match, dispatch, productById, productsByCategory }) => {
                       alt="#product"
                       width="100px"
                       height="300px"
+                      className="border border-1"
                     />
                   </div>
                 </div>
@@ -59,23 +59,13 @@ const DetailScreen = ({ match, dispatch, productById, productsByCategory }) => {
                     <li>
                       <a href="#">{productById.isNewOne ? "Mới" : "Cũ"}</a>
                     </li>
+                    <br />
+                    <li>Chi tiết sản phẩm: <p dangerouslySetInnerHTML={{ __html: productById.detail }}></p>  </li>
                   </ul>
-                </div>
-                <div className="product-contact">
-                  <div className="product-contact-button">
-                    <button className="button">Biến tần chính hãng</button>
-                  </div>
-                </div>
-                <div className="product-contact">
-                  <div className="product-contact-button">
-                    <button className="button">LTTNElectric</button>
-                  </div>
                 </div>
               </div>
               {/* /Product details */}
-              {/* Product tab */}
-              <TabPaneDetail detail={productById.detail} />
-              {/* /product tab */}
+
             </div>
             {/* /row */}
           </div>
